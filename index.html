@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b13">
+  <title>RAMSO HUB | Annotation & Learning</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" onclick="navigate('Dashboard');return false">
+        <span class="brand-icon">R</span>
+        <span>RAMSO <small>HUB</small></span>
+      </a>
+
+      <div class="nav-label">WORKSPACE</div>
+      <nav id="navigation">
+        <button class="nav-item active" data-page="Dashboard">▦ <span>Dashboard</span></button>
+        <button class="nav-item" data-page="Work Hub">▣ <span>Work Hub</span></button>
+        <button class="nav-item" data-page="Annotation Studio">⌘ <span>Annotation Studio</span></button>
+        <button class="nav-item" data-page="Missions">◎ <span>Missions</span></button>
+      </nav>
+
+      <div class="nav-label">DEVELOPMENT</div>
+      <nav>
+        <button class="nav-item" data-page="Learning">▤ <span>Learning & Training</span></button>
+        <button class="nav-item" data-page="Materials">▧ <span>Learning Materials</span></button>
+        <button class="nav-item" data-page="Certificates">♜ <span>Certificates</span></button>
+        <button class="nav-item" data-page="Performance">↗ <span>Performance</span></button>
+      </nav>
+
+      <div class="nav-label">ACCOUNT</div>
+      <nav>
+        <button class="nav-item" data-page="Notifications">♧ <span>Notifications</span></button>
+        <button class="nav-item" data-page="Settings">⚙ <span>Settings</span></button>
+        <button class="nav-item" data-page="Administration" id="adminNav" hidden>♙ <span>Administration</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="status-dot"></div>
+        <div><b>RAMSO Workspace</b><small>Local preview mode</small></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Menu">☰</button>
+        <div class="breadcrumb">RAMSO HUB <span>/</span> <b id="pageTitle">Dashboard</b></div>
+        <div class="top-actions">
+          <button class="icon-btn" onclick="navigate('Notifications')" title="Notifications">♧</button>
+          <button class="profile-button" id="profileBtn">
+            <span class="avatar" id="avatar">G</span>
+            <span class="profile-text"><b id="profileName">Guest User</b><small id="profileRole">Preview account</small></span>
+            <span>⌄</span>
+          </button>
+          <div class="profile-menu" id="profileMenu" hidden>
+            <button onclick="navigate('Settings')">My profile & settings</button>
+            <button onclick="signIn()">Sign in</button>
+            <button onclick="signOut()">Sign out</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="content" id="content"></section>
+      <footer>© <span id="year"></span> RAMSO HUB <span>•</span> Learn. Annotate. Improve.</footer>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+  <input type="file" id="materialInput" hidden multiple
+    accept=".pdf,.txt,.md,.csv,.json,.png,.jpg,.jpeg,.webp,.mp4,.webm,.doc,.docx,.ppt,.pptx">
+
+  <script src="app.js"></script>
+</body>
+</html>
